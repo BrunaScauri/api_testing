@@ -1,6 +1,9 @@
+require('dotenv').config()
 const express = require('express');
 // const axios = require("axios");
 const app = express();
+
+const port = process.env.PORT;
 
 app.get('/', (req, res) => {
 	try {
@@ -18,4 +21,4 @@ app.get('/', (req, res) => {
 // 	console.error(error);
 // });
 
-app.listen(3000, () => console.log('Listening on port 3000!'));
+app.listen(port, () => console.log(`Listening on port ${port}!`));
