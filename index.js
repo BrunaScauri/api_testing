@@ -20,8 +20,8 @@ app.get('/', (req, res) => {
   axios.request(options).then((response) => {
     console.log(response.data);
     res.json(response.data);
-  }).catch((error) => {
-    console.error(error);
+  }).catch((err) => {
+    console.error(err);
   });
 });
 
