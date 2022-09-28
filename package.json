@@ -1,0 +1,42 @@
+{
+  "name": "api_therepo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:styles": "npx stylelint '**/*.css'",
+    "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json . --ext .js,.jsx",
+    "dev": "nodemon --watch src --watch index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrunaScauri/api_testing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrunaScauri/api_testing/issues"
+  },
+  "homepage": "https://github.com/BrunaScauri/api_testing#readme",
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "eslint": "^8.24.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.31.8",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "mocha": "^10.0.0",
+    "nodemon": "^2.0.20",
+    "sinon": "^14.0.0",
+    "stylelint": "^14.12.1"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1"
+  }
+}
