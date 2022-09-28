@@ -1,26 +1,27 @@
 require('dotenv').config();
 const express = require('express');
-const axios = require('axios');
+const axios = require('axios').default;
 const cors = require('cors');
 
 const app = express();
-
+app.use(cors());
 const port = process.env.PORT;
 
 app.get('/', (req, res) => {
-  try {
-    // const response = "https://space-news.p.rapidapi.com/news/guardian"
-    // res.send(response.data)
-    res.send('hello, api!');
-  } catch (e) {
-    console.error(e);
-  }
-});
+  const options = {
+    method: 'GET',
+    url: 'https://space-news.p.rapidapi.com/news/guardian',
+    headers: {
+      'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',
+      'X-RapidAPI-Host': 'space-news.p.rapidapi.com',
+    },
+  };
 
-// axios.request(options).then(function (response) {
-// console.log(response.data);
-// }).catch(function (error) {
-// console.error(error);
-// });
+  axios.request(options).then((response) => {
+    console.log(response.data);
+  }).catch((error) => {
+    console.error(error);
+  });
+});
 
 app.listen(port, () => console.log(`Listening on port ${port}!`));
