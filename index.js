@@ -1,13 +1,13 @@
 require('dotenv').config();
 const express = require('express');
 const axios = require('axios').default;
-const cors = require('cors');
+// const cors = require('cors');
 
 const app = express();
-app.use(cors());
+app.use(express.json());
 const port = process.env.PORT;
 
-app.get('/', (req, res) => {
+app.get('/news', (req, res) => {
   const options = {
     method: 'GET',
     url: 'https://space-news.p.rapidapi.com/news/guardian',
@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 
   axios.request(options).then((response) => {
     console.log(response.data);
-    res.json(response.data);
+    res.send(response.data);
   }).catch((err) => {
     console.error(err);
   });
