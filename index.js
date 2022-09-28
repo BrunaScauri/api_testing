@@ -12,13 +12,14 @@ app.get('/', (req, res) => {
     method: 'GET',
     url: 'https://space-news.p.rapidapi.com/news/guardian',
     headers: {
-      'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',
-      'X-RapidAPI-Host': 'space-news.p.rapidapi.com',
+      'X-RapidAPI-Key': process.env.RAPID_API_KEY,
+      'X-RapidAPI-Host': process.env.RAPID_API_HOST,
     },
   };
 
   axios.request(options).then((response) => {
     console.log(response.data);
+    res.json(response.data);
   }).catch((error) => {
     console.error(error);
   });
